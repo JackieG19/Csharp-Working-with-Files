@@ -7,17 +7,24 @@ namespace CSharpFundamentals
         static void Main(string[] args)
         {
             var path = @"c:\somefile.jpg";
-            
-            // Copies an existing file to a new file.
             File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true)
-            
-            // Deletes the specified file.
             File.Delete(path);
-            
-            if(File.Exists(path)) // Determines whether the specified file exists.
+            if(File.Exists(path)) 
             {
-                /*File class - Provides static methods for the creation, copying, deletion, moving, 
-                and opening of a single file, and aids in the creation of FileStream objects.*/
+                //
+            }
+            var content = File.ReadAllText(path);
+            
+            var fileInfo = new FileInfo(path);
+            
+            fileInfo.CopyTo("..."); // Copies an existing file to a new file.
+            
+            fileInfo.Delete(); // Permanently deletes a file.
+            
+            if(fileInfo.Exists) // Gets a value indicating whether a file exists.
+            {
+                /*FileInfo class - Provides properties and instance methods for the creation, copying, deletion, moving, 
+                and opening of files, and aids in the creation of FileStream objects. This class cannot be inherited.*/
             }
         }
     }
