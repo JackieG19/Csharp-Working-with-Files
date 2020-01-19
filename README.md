@@ -29,3 +29,6 @@
 	- GetFileName() - returns the file name and extension of the specified path string.
 	- GetExtension() - returns the extension (including the period ".") of the specified path string.
 	- GetTempPath() - returns the path of the current user's temporary folder.
+___
+
+Next -> [Debugging Applications](https://github.com/JackieG19/Csharp-Debugging-Applications)
