@@ -6,23 +6,25 @@ namespace CSharpFundamentals
     {
         static void Main(string[] args)
         {
-            Directory.CreateDirectory(@"c:\temp\folder1");
+            var path = @"C:\Projects\CSharpFundamentals\HelloWorld\HelloWorld.sln";
             
-            var directories = Directory.GetDirectories("c:\projects\CSharpFundamentals", "*.*", SearchOption.AllDirectories);
+            var dotIndex = path.IndexOf('.');
+            var extension = path.Substring(dotIndex);
             
-            foreach(var directory in directories)
-                Console.WriteLine(directory);
-   
-            Directory.Exists("..."); 
+            /*Path Class - Performs operations on String instances that contain file or directory
+            path information. These operations are performed in a cross-platform manner.*/
             
-            /*DirectoryInfo - Exposes instance methods for creating, moving, and enumerating 
-            through directories and subdirectories. This class cannot be inherited.*/
+            // Returns the extension (including the period ".") of the specified path string.
+            Console.WriteLine("Extension" + Path.GetExtension(path));
             
-            var directoryInfo = new DirectoryInfo("...");
+            // Returns the file name and extension of the specified path string.
+            Console.WriteLine("File Name" + Path.GetFileName(path));
             
-            directoryInfo.GetFile(); // Returns a file list from the current directory.
-
-            directoryInfo.GetDirectories(); // Returns the subdirectories of the current directory.
+            // Returns the file name of the specified path string without the extension.
+            Console.WriteLine("File Name without Extension" + Path.GetFileNameWithoutExtension(path));
+            
+            // Returns the directory information for the specified path string.
+            Console.WriteLine("Directory Name" + Path.GetDirectoryName(path));
         }
     }
 }
